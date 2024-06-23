@@ -1,0 +1,55 @@
+---
+import AsideMenu from '@/components/AsideMenu.astro';
+import MainHeader from '@/components/MainHeader.astro';
+import { ViewTransitions } from 'astro:transitions';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<ViewTransitions/>
+	</head>
+	<body>
+		<div id="app" class="max-w-[1500px] mx-auto h-screen py-10 gap-4 px-4">
+			<aside class="[grid-area:aside] bg-white/5 rounded-2xl border border-white/5">
+				<AsideMenu/>
+			</aside>
+			<main class="[grid-area:main] bg-white/5 rounded-2xl overflow-hidden border border-white/5">
+				<MainHeader/>
+				<slot />
+			</main>
+		</div>
+	</body>
+</html>
+
+<style>
+
+	#app {
+		display: grid;
+		grid-template-areas: 
+			'aside main';
+		grid-template-columns: 300px 1fr;
+		grid-template-rows: 1fr auto;
+	}
+</style>
+
+<style is:global>
+	html {
+		font-family: system-ui, sans-serif;
+		background: #13151a;
+		background-size: 224px;
+		color-scheme: dark light;
+	}
+</style>

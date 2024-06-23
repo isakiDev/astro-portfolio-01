@@ -1,0 +1,16 @@
+---
+const namePage = Astro.url.pathname.replace('/', '')
+const title = namePage.trim().length <= 0 ? 'Welcome 🤘' : namePage 
+---
+
+<header class="relative flex flex-col p-8 gap-4">
+  <ul class="absolute flex gap-4 font-medium top-0 right-0 px-8 py-4 bg-white/5 rounded-bl-2xl shadow-lg">
+    <li><a href="/projects">Projects</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/experience">Experience</a></li>
+  </ul>
+
+  <h1 class="text-2xl font-bold capitalize">{title}</h1>
+
+  <hr class="border-b-4 rounded-lg w-10 border-[#DCD7C9]" />
+</header>

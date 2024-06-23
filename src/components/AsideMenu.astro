@@ -1,0 +1,71 @@
+---
+import LinkedInIcon from "@/icons/LinkedIn.astro";
+import GitHubIcon from "@/icons/GitHub.astro";
+import TiktokIcon from "@/icons/TikTok.astro";
+
+const mockItems = [
+  { 
+    icon: 'icon',
+    title: 'Email',
+    description: 'test@gmail.com'
+  },
+  { 
+    icon: 'icon',
+    title: 'Email',
+    description: 'test@gmail.com'
+  },
+  { 
+    icon: 'icon',
+    title: 'Email',
+    description: 'test@gmail.com'
+  }
+]
+---
+
+<div class="flex flex-col items-center justify-center px-8 py-10 gap-8">
+  <picture
+    class="h-40 w-40 rounded-3xl bg-white/20 flex justify-center items-center"
+  >
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Unknown_person.jpg"
+      alt="Personal Image"
+      class="object-cover h-20 w-20 rounded-full"
+    />
+  </picture>
+
+  <strong class="text-xl">Gaspar Castillo Catrifol</strong>
+
+  <span class="bg-[#2C3639] px-4 py-2 rounded-xl font-medium"
+    >Web Developer</span
+  >
+
+  <hr class="px-0.5 w-full" />
+
+  <ul class="flex flex-col items-start space-y-5 w-full">
+    {
+      mockItems.map(({ icon, title, description }) => (
+          <li class="flex justify-center items-center gap-4">
+            <picture class="flex justify-center items-center h-14 w-14 rounded-xl bg-white/10 shadow-xl">
+              <img
+                src={icon}
+                alt={`Icon of ${title}`}
+                class="bg-cover h-10 w-10"
+              />
+            </picture>
+
+            <div>
+              <span class="">{title}</span>
+              <p>{description}</p>
+            </div>
+          </li>
+        ))
+    }
+  </ul>
+
+  <!-- social icons -->
+  <ul class="flex gap-2">
+    <li><a href=""><LinkedInIcon /></a></li>
+    <li><a href=""><GitHubIcon /></a></li>
+    <li><a href=""><TiktokIcon /></a></li>
+  </ul>
+</div>
