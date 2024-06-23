@@ -1,6 +1,6 @@
 ---
-import AsideMenu from '@/components/AsideMenu.astro';
-import MainHeader from '@/components/MainHeader.astro';
+import AsideMenu from '@/components/aside/AsideMenu.astro';
+import MainHeader from '@/components/main/MainHeader.astro';
 import { ViewTransitions } from 'astro:transitions';
 
 interface Props {
@@ -22,10 +22,13 @@ const { title } = Astro.props;
 		<ViewTransitions/>
 	</head>
 	<body>
-		<div id="app" class="max-w-[1500px] mx-auto h-screen py-10 gap-4 px-4">
+		<div id="app" class="max-w-[1500px] mx-auto h-screen py-2 md:py-10 gap-4 px-2">
+			<!-- aside -->
 			<aside class="[grid-area:aside] bg-white/5 rounded-2xl border border-white/5">
 				<AsideMenu/>
 			</aside>
+
+			<!-- main -->
 			<main class="[grid-area:main] bg-white/5 rounded-2xl overflow-hidden border border-white/5">
 				<MainHeader/>
 				<slot />
@@ -42,6 +45,14 @@ const { title } = Astro.props;
 			'aside main';
 		grid-template-columns: 300px 1fr;
 		grid-template-rows: 1fr auto;
+
+		@media (max-width: 768px) {
+			grid-template-areas:
+            'aside'
+            'main';
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+		}
 	}
 </style>
 
