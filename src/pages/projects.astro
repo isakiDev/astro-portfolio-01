@@ -1,7 +1,109 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+
+const mockProjects = [
+  // {
+  //   image: "",
+  //   title: "Fashion Like",
+  //   description: "Red social enfocada en la industria de la moda.",
+  //   skills: [
+  //     "NestJS",
+  //     "TypeScript",
+  //     "JWT",
+  //     "React",
+  //     "Zustand",
+  //     "Tailwind CSS",
+  //     "PostgreSQL",
+  //     "Docker",
+  //     "Cloudinary",
+  //   ],
+  //   urlDeploy: "https://isakidev-fashion-like.netlify.app",
+  //   urlRepository: "https://github.com/isakiDev/nest-fashion-like",
+  //   createdAt: "2024-03-22T03:00:00.000Z",
+  // },
+  {
+    image:
+      "https://res.cloudinary.com/dzn3nempv/image/upload/v1705917516/portfolio/xojyy8odx2mnyc8uleeh.png",
+    title: "Calendar",
+    description: "Gestionador de notas con redux y autenticación de usuarios.",
+    skills: [
+      "Node.js",
+      "TypeScript",
+      "JWT",
+      "React",
+      "Redux",
+      "Tailwind CSS",
+      "MongoDB",
+      "Docker",
+    ],
+    urlDeploy: "https://react-calendar.isakidev.com/auth/login",
+    urlRepository: "https://github.com/isakiDev/node-calendar-ts",
+    createdAt: "2024-01-01T03:00:00.000Z",
+  },
+  {
+    image:
+      "https://res.cloudinary.com/dzn3nempv/image/upload/v1701660260/portfolio/gnexvarptbkebssqc3k7.png",
+    title: "Todo List",
+    description: "Gestionador de tareas.",
+    skills: ["React", "TypeScript", "Tailwind CSS"],
+    urlDeploy: "https://react-todots.isakidev.com",
+    urlRepository: "https://github.com/isakiDev/react-todo-ts",
+    createdAt: "2023-12-01T03:00:00.000Z",
+  },
+  {
+    image:
+      "https://res.cloudinary.com/dzn3nempv/image/upload/v1701655988/portfolio/ckkxmvb2ym42sdggzqvp.png",
+    title: "Buscador de películas",
+    description: "Integración de API movies y debounce.",
+    skills: ["React", "JavaScript", "CSS"],
+    urlDeploy: "https://react-search-movies.isakidev.com",
+    createdAt: "2023-08-01T04:00:00.000Z",
+  },
+  {
+    image:
+      "https://res.cloudinary.com/dzn3nempv/image/upload/v1701658835/portfolio/pfehvtifg6g0jirnfzdl.png",
+    title: "Gifs App",
+    description: "Buscador de gifs conectado con API de Giphy.",
+    skills: ["React", "JavaScript", "CSS"],
+    urlDeploy: "https://react-gifapp.isakidev.com",
+    urlRepository: "https://github.com/isakiDev/react-gifsApp",
+    createdAt: "2023-08-01T04:00:00.000Z",
+  },
+];
 ---
 
 <Layout title="Projects">
-  <div class="px-8">Projects</div>
+  <section class="px-8">
+    <ul id="projects-grid">
+      {
+        mockProjects?.map((project) => (
+          <div>
+            <header class="rounded-xl overflow-hidden">
+              <img
+                class="duration duration-200 transform hover:scale-110"
+                src={project.image}
+                alt=""
+               />
+            </header>
+            
+            <footer class="p-2">
+              <h1 class="text-lg">{project.title}</h1>
+              <p class="">{project.description}</p>
+            </footer>
+          </div>
+        ))
+      }
+    </ul>
+  </section>
 </Layout>
+
+<style>
+  #projects-grid{
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(300px, 1fr)
+    );
+    gap: 10px;
+  }
+</style>
