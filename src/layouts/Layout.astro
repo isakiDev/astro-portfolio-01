@@ -24,12 +24,12 @@ const { title } = Astro.props;
 	<body>
 		<div id="app" class="max-w-[1500px] mx-auto h-screen py-2 md:py-10 gap-4 px-2">
 			<!-- aside -->
-			<aside class="[grid-area:aside] bg-white/5 rounded-2xl border border-white/5">
+			<aside class="[grid-area:aside] bg-primary rounded-2xl border border-secondary">
 				<AsideMenu/>
 			</aside>
 
 			<!-- main -->
-			<main class="[grid-area:main] bg-white/5 rounded-2xl overflow-hidden border border-white/5">
+			<main class="[grid-area:main] bg-primary rounded-2xl overflow-hidden border border-secondary">
 				<MainHeader/>
 				<slot />
 			</main>
@@ -61,6 +61,7 @@ const { title } = Astro.props;
 		font-family: system-ui, sans-serif;
 		background: #13151a;
 		background-size: 224px;
-		color-scheme: dark light;
+		/* color-scheme: dark light; */
+		color: #e5e7eb ;
 	}
 </style>
