@@ -1,0 +1,40 @@
+---
+import Mail from "@/icons/Mail.astro";
+import Cake from "@/icons/Cake.astro";
+import Location from "@/icons/Location.astro";
+
+const mockItems = [
+  {
+    icon: Mail,
+    title: "EMAIl",
+    description: "gaspar.c.developer@gmail.com",
+  },
+  {
+    icon: Cake,
+    title: "BIRTHDAY",
+    description: "June 04, 2001",
+  },
+  {
+    icon: Location,
+    title: "LOCATION",
+    description: "Chile",
+  },
+];
+---
+
+<ul class="flex flex-col items-start space-y-5 w-full">
+  {
+    mockItems.map(({ icon: Icon, title, description }) => (
+      <li class="flex items-center gap-4">
+        <div class="rounded-xl p-2 bg-secondary/10 hover:bg-secondary/15 text-tertiary shadow-sm">
+          <Icon />
+        </div>
+
+        <div>
+          <span class="text-gray-400 text-xs font-medium">{title}</span>
+          <p>{description}</p>
+        </div>
+      </li>
+    ))
+  }
+</ul>
