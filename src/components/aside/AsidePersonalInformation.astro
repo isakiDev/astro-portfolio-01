@@ -2,6 +2,7 @@
 import Mail from "@/icons/Mail.astro";
 import Cake from "@/icons/Cake.astro";
 import Location from "@/icons/Location.astro";
+import FlagCL from "@/icons/FlagCL.astro";
 
 const mockItems = [
   {
@@ -17,22 +18,28 @@ const mockItems = [
   {
     icon: Location,
     title: "LOCATION",
-    description: "Chile",
+    description: "",
+    descriptionIcon: FlagCL
   },
 ];
 ---
 
 <ul class="flex flex-col items-start space-y-5 w-full">
   {
-    mockItems.map(({ icon: Icon, title, description }) => (
+    mockItems.map(({ icon: Icon, title, description, descriptionIcon: DescriptionIcon}) => (
       <li class="flex items-center gap-4">
         <div class="rounded-xl p-2 bg-secondary/10 hover:bg-secondary/15 text-tertiary shadow-sm">
           <Icon />
         </div>
 
         <div>
-          <span class="text-gray-400 text-xs font-medium">{title}</span>
-          <p>{description}</p>
+          <h2 class="text-sm font-medium">{title}</h2>
+
+          {
+            description.length > 0
+            ? <p>{description}</p>
+            : DescriptionIcon && <DescriptionIcon/>
+          }
         </div>
       </li>
     ))
