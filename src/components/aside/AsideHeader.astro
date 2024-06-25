@@ -1,13 +1,18 @@
-<picture
-class="h-40 w-40 rounded-3xl bg-secondary"
->
-<img
-  src="./public/images/me.png"
+---
+import { Image } from "astro:assets"
+import Badge from "../ui/Badge.astro"
+---
+<picture class="h-40 w-40 rounded-3xl bg-secondary">
+<Image
+  src="/images/me.png"
   alt="Memoji of me"
-  class="h-22 w-22"
+  width={200}
+  height={200}
 />
 </picture>
 
 <strong class="text-xl">Gaspar Castillo Catrifol</strong>
 
-<span class="bg-secondary px-3 py-1 rounded-full font-medium">Web Developer</span>
+<!-- <span class="bg-secondary px-3 py-1 rounded-full font-medium">Web Developer</span> -->
+
+<Badge>Web Developer</Badge>

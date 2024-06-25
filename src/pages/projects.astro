@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "@/layouts/Layout.astro";
 
 const mockProjects = [
@@ -77,20 +78,16 @@ const mockProjects = [
     <ul id="projects-grid">
       {
         mockProjects?.map((project) => (
-          <div>
+          <li>
             <header class="rounded-xl overflow-hidden">
-              <img
-                class="duration duration-200 transform hover:scale-110"
-                src={project.image}
-                alt=""
-               />
+              <Image class="duration duration-500 transform hover:scale-110" src={project.image} alt={`Image of ${project.title}`} width={400} height={400}/>
             </header>
             
             <footer class="p-2">
-              <h1 class="text-lg">{project.title}</h1>
-              <p class="">{project.description}</p>
+              <h2 class="text-lg font-medium">{project.title}</h2>
+              <p>{project.description}</p>
             </footer>
-          </div>
+          </li>
         ))
       }
     </ul>
