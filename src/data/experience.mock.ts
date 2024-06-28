@@ -1,12 +1,11 @@
----
-import BtnReadMore from "../ui/BtnReadMore.astro";
+import type { TimeLine } from "@/types/timeLine";
 
-const mockExperience = [
+export const mockExperience: TimeLine[] = [
 	{
 		position: "Full Stack",
 		company: "No Country",
 		date: "May 2024 - Actualidad",
-		tasks: [
+		task: [
 			"Creación de 'BarberHub' una aplicación web innovadora para automatizar la reserva de citas en barberías, asegurando una experiencia eficiente y sin contratiempos para los usuarios.",
 		],
 		link: "https://www.linkedin.com/posts/isakidev_nocountry-teamwork-networking-activity-7200603436743016449-RI2M?utm_source=share&utm_medium=member_desktop",
@@ -15,36 +14,11 @@ const mockExperience = [
 		position: "Full Stack",
 		company: "ColTect Spa",
 		date: "Ene 2023 - Jul 2023",
-		tasks: [
+		task: [
 			"Mantenimiento de módulos en PHP.",
 			"Diseñar interfaces de usuario con Bootstrap.",
 			"Integración de solicitudes HTTP con jQuery.",
 			"Administración de base de datos MySQL.",
 		],
 	},
-];
----
-
-<ol
-	class="relative border-s border-gray-200 dark:border-gray-700 space-y-10 max-w-[800px]"
->
-	{
-		mockExperience?.map(({ link, position, company, date, tasks }) => (
-			<li class="mb-10 ms-4">
-				<div class="absolute w-3 h-3 bg-tertiary rounded-full mt-1.5 -start-1.5" />
-
-				<time class="text-sm font-bold leading-none text-tertiary">{date}</time>
-
-				<h3 class="text-lg font-semibold text-white">{`${position} • ${company}`}</h3>
-
-				<ul class="list-disc ml-5">
-					{tasks?.map((task) => (
-						<li>{task}</li>
-					))}
-				</ul>
-
-				{link && <BtnReadMore link={link} />}
-			</li>
-		))
-	}
-</ol>
+]
