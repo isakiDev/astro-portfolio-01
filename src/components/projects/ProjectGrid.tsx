@@ -5,16 +5,8 @@ export const ProjectGrid = () => {
 
   const [projects, setProjects] = useState(mockProjects)
 
-  const handleClick = () => {
-    setProjects([])
-    console.log(projects)
-  }
-
   return (
-    <ul>
-
-      <button class='p-2 bg-slate-200' onClick={handleClick}>Action</button>
-
+    <ul id='projects-grid'>
       {
         projects?.map(project => (
           <li>
