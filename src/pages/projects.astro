@@ -1,14 +1,12 @@
 ---
-// import { Image } from "astro:assets";
 import Layout from "@/layouts/Layout.astro";
 import { ProjectGrid } from "@/components/projects/ProjectGrid";
-// import { mockProjects } from '@/data/projects.mock'
+import Title from "@/components/ui/Title.astro";
 ---
 
 <Layout title="Projects">
-  <section class="px-8">
-    <ProjectGrid />
-  </section>
+  <Title>Projects</Title>
+  <ProjectGrid />
 </Layout>
 
 <style is:global>
