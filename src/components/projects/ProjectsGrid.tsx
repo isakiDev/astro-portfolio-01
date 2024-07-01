@@ -1,7 +1,7 @@
 import { useState } from 'preact/hooks'
 import { mockProjects } from '@/data/projects.mock'
 
-export const ProjectGrid = () => {
+export const ProjectsGrid = () => {
 
   const [projects, setProjects] = useState(mockProjects)
 
