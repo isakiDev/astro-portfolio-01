@@ -1,10 +1,17 @@
 ---
-import TimeLine from "@/components/ui/TimeLine.astro";
-import Title from "@/components/ui/Title.astro";
 import Layout from "@/layouts/Layout.astro";
+
+import TimeLine from "@/components/resume/TimeLine.astro";
+import Title from "@/components/main/Title.astro";
+
+import { Carousel } from "@/components/carousel/Carousel";
 ---
 
 <Layout title="Resume">
   <Title>Resume</Title>
   <TimeLine />
+
+  <div class="pt-4">
+    <Carousel client:load />
+  </div>
 </Layout>
