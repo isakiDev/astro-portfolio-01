@@ -1,0 +1,19 @@
+---
+import ArrowRightIcon from "@/icons/ArrowRight.astro";
+
+interface Props {
+  link: string;
+}
+
+const { link } = Astro.props;
+---
+
+<a
+  rel="noopener noreferrer"
+  target="_blank"
+  href={link}
+  class="px-3 py-1 rounded-full flex items-center bg-secondary w-fit my-2"
+>
+  Read more
+  <ArrowRightIcon />
+</a>

@@ -1,14 +1,10 @@
 ---
-import { Image } from "astro:assets"
-import Badge from "../ui/Badge.astro"
+import { Image } from "astro:assets";
+import Badge from "./Badge.astro";
 ---
+
 <picture class="h-40 w-40 rounded-3xl bg-secondary">
-<Image
-  src="/images/me.png"
-  alt="Memoji of me"
-  width={200}
-  height={200}
-/>
+  <Image src="/images/me.png" alt="Memoji of me" width={200} height={200} />
 </picture>
 
 <strong class="text-xl">Gaspar Castillo Catrifol</strong>
